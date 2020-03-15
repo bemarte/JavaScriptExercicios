@@ -1,0 +1,51 @@
+<!-- Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+algum quadrado troque sua cor para uma cor aleatória -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+</head>
+
+<body>
+    <div></div>
+    <button id="criaQuadrado">
+        Criar quadrado vermelho
+    </button>
+
+    <div id="squad"></div>
+
+    <ul></ul>
+
+    <script>
+        var btnElement = document.getElementById("criaQuadrado");
+        var squaresElement = document.getElementById("squad");
+        btnElement.onclick = function() {
+            var square = document.createElement("div");
+            square.style.width = "100px";
+            square.style.height = "100px";
+            square.style.backgroundColor = "#F00";
+            square.style.position = 'relative';
+            square.style.float = 'left';
+
+            square.onmouseover = function() {
+                square.style.backgroundColor = getRandomColor();
+            };
+            squaresElement.appendChild(square);
+        };
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+
+</html>
