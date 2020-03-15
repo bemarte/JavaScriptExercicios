@@ -1,49 +1,15 @@
 <!-- Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
 vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
 aparecer na tela.--> 
-
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Desafio 1 - Criar quadrado</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            position: relative;
-            float: left;
-        }
-    </style>
-
     <button onclick="criaCaixa()">Criar nova caixa</button>
-    <div id="app">
-    </div>
-
-    <script>
-        function criaCaixa() {
-
-            var boxElement = document.createElement("div");
-            boxElement.setAttribute('class', 'box');
-            boxElement.setAttribute('style', 'background-color:#' + '#f00' + ';');
-            boxElement.setAttribute("onclick", 'mudarCor(this)');
-
-            var criarElemento = document.querySelector('#app');
-            criarElemento.appendChild(boxElement);
-
-        }
-        function mudarCor(elemento) {
-
-            var boxId = elemento.id;
-
-            var boxSelector = document.querySelector("#" + boxId);
-            boxSelector.setAttribute('style', 'background-color:#' + '#f00' + ';');
-
-            console.log(boxId);
-
-        }
-    </script>
+    <div id="app"></div>
+    <script src="js/index.js"></script>
 </body>
 </html>
